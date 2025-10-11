@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+import TestimonialImage1 from "../../assets/testimonial-image1.jpg"
+import TestimonialImage2 from "../../assets/testimonial-image2.jpg"
+
+
 const testimonials = [
   {
     id: 1,
@@ -8,7 +12,7 @@ const testimonials = [
     quote:
       "Creavo transformed our online presence! The website design was not only visually stunning but also incredibly user-friendly. Our traffic and inquiries have doubled since launch.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      TestimonialImage1,
   },
   {
     id: 2,
@@ -16,7 +20,7 @@ const testimonials = [
     quote:
       "Working with Creavo was a breeze. They understood our vision from day one and delivered a modern, responsive website that perfectly represents our brand.",
     avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+      TestimonialImage2,
   },
   {
     id: 3,

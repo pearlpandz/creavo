@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowRight, FaPaintBrush  } from "react-icons/fa";
-import ShopBackgroundImage from "../../assets/shop-category-image4.png"; // Replace with your actual background image
+import ShopBackgroundImage from "../../assets/shop-background-image.png"; // Replace with your actual background image
 import SocialMediaImage from "../../assets/shop-category-image1.png"; // Replace with actual template images
 import WebDesignImage from "../../assets/shop-category-image2.png";
 import AppDesignImage from "../../assets/shop-category-image3.png";
@@ -79,25 +79,36 @@ const Shop = () => {
     <>
       {/* 1. Explore Creavo Templates Section */}
       <section
-        className="py-5 position-relative text-start text-white"
-        style={{
-          backgroundImage: `url(${ShopBackgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "50vh",
-          minHeight: "400px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          className="position-absolute top-0 start-0 w-100 h-100"
-          style={{
-            background: "rgba(0, 0, 0, 0.4)",
-            zIndex: -1,
-          }}
-        ></div>
+  className="py-5 position-relative text-start text-white overflow-hidden"
+  style={{
+    height: "50vh",
+    minHeight: "400px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  {/* ✅ Blurred background image layer */}
+  <div
+    className="position-absolute top-0 start-0 w-100 h-100"
+    style={{
+      backgroundImage: `url(${ShopBackgroundImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      filter: "blur(2px)", // control blur intensity here
+      transform: "scale(1.1)", // prevent blur edges
+      zIndex: -2,
+    }}
+  ></div>
+
+  {/* ✅ Dark overlay for better text contrast */}
+  <div
+    className="position-absolute top-0 start-0 w-100 h-100"
+    style={{
+      background: "rgba(0, 0, 0, 0.45)",
+      zIndex: -1,
+    }}
+  ></div>
         <div className="container position-relative">
           <h1 className="display-5 fw-semibold mb-4" style={{ color: "#fff" }}>
             Explore Creavo Templates

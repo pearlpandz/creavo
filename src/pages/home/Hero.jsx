@@ -1,7 +1,7 @@
 import React from "react";
-import card1 from "../../assets/hero-card-1.jpeg";
-import card2 from "../../assets/hero-card-2.jpeg";
-import card3 from "../../assets/hero-card-3.jpeg";
+import card1 from "../../assets/hero-card-1.jpg";
+import card2 from "../../assets/hero-card-2.jpg";
+import card3 from "../../assets/hero-card-3.jpg";
 import card4 from "../../assets/hero-card-4.jpg";
 
 const cards = [

@@ -1,6 +1,8 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
 import "./Footer.css";
+import { Link } from "react-router-dom"; // Add this import at the top
+
 
 const Footer = () => {
   return (
@@ -41,9 +43,9 @@ const Footer = () => {
                 className="form-control bg-secondary text-white border-0"
                 placeholder="Enter your email"
               />
-              <button className="btn btn-primary">
+              <a href="mailto:contact@creavo.com" className="btn btn-primary">
                 <MdEmail size={22} />
-              </button>
+              </a>
             </div>
           </div>
         </div>
