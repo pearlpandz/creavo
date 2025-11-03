@@ -113,6 +113,7 @@ const HowItWorks = () => (
             fontSize: "1.1rem",
             boxShadow: "0 1px 8px rgba(76,41,120,0.10)"
           }}
+          onClick={() => window.open("https://app.creavo.in/#/signup", "_blank")}
         >
           Get Started
         </button>

@@ -1,9 +1,9 @@
 import React from "react";
-import { FaMobileAlt, FaCodeBranch, FaUserFriends, FaDollarSign, FaMoneyBillWave, FaHospital, FaBuilding, FaUtensils, FaShoppingCart, FaBookOpen } from "react-icons/fa";
-import AppDesingServiceImage from "../../assets/app-desing-services-image.png";
+import { FaPalette, FaAddressCard, FaFeatherAlt, FaMoneyBillWave, FaHospital, FaBuilding, FaUtensils, FaShoppingCart, FaBookOpen } from "react-icons/fa";
+import LogoVisitingServiceImage from "../../assets/logo-visiting-services-image.jpg";
 
 
-const AppDesignServices = () => {
+const LogoAndVisitingService = () => {
   return (
     <div className="min-vh-100" style={{ backgroundColor: "#f2e6fa" }}>
       {/* Hero Section */}
@@ -24,7 +24,7 @@ const AppDesignServices = () => {
                   lineHeight: 1.2,
                 }}
               >
-                App Design Services That Redefine User Experience
+               Logo & Visiting Card Design
               </h1>
               <p
                 className="mb-4"
@@ -38,7 +38,7 @@ const AppDesignServices = () => {
                   lineHeight: 1.4,
                 }}
               >
-                Elevate your mobile presence with custom app design and development services. Our expert team creates intuitive, visually stunning apps tailored to your brand, ensuring seamless user experiences across iOS and Android platforms.
+                We create impactful, memorable designs that reflect your brand’s identity and leave a lasting impression. From professional logos to elegant visiting cards our designs speak for your business before you do.
               </p>
               <button
                 className="btn fw-semibold"
@@ -75,7 +75,7 @@ const AppDesignServices = () => {
                   letterSpacing: "0.5px",
                 }}
               >
-                Why Choose Our App Design?
+                Why Choose Our Graphic Design Services?
               </h2>
               <p
                 style={{
@@ -85,7 +85,7 @@ const AppDesignServices = () => {
                   marginBottom: "1.8rem",
                 }}
               >
-                At Creavo, we create mobile app designs that balance beauty, usability, and performance. Whether you're building for Android, iOS, or cross-platform, our designs deliver engaging layouts and intuitive navigation flow that keep users coming back.
+                At Creavo, we create mobile app designs that balance beauty, usability, and performance. Whether you’re building for Android, iOS, or cross-platform, our focus is on delivering apps that feel natural to use and reflect your brand identity. Every detail from layouts and interactions to navigation flows is designed to keep users engaged and make their journey effortless.
               </p>
               <p
                 style={{
@@ -99,10 +99,10 @@ const AppDesignServices = () => {
             </div>
             <div className="col-lg-6">
               <img
-                src={AppDesingServiceImage}
+                src={LogoVisitingServiceImage}
                 alt="App Desing Service Image"
                 className="img-fluid rounded-2 shadow"
-                style={{ maxWidth: "100%", height: "auto" }}
+                style={{ width: "80%", height: "50%" }}
               />
             </div>
           </div>
@@ -125,7 +125,7 @@ const AppDesignServices = () => {
               fontWeight: 700,
             }}
           >
-            Our App Design Offers
+            Our Graphic Design Offers
           </h2>
 
           <div className="row g-4">
@@ -154,7 +154,7 @@ const AppDesignServices = () => {
                     boxSizing: "border-box",
                   }}
                 >
-                  Native App Desing
+                 Logo Design
                 </div>
                 <div
                   style={{
@@ -169,9 +169,9 @@ const AppDesignServices = () => {
                     gap: 15,
                   }}
                 >
-                  <FaMobileAlt color="#5454a6" size={40} />
+                  <FaPalette color="#5454a6" size={40} />
                   <p style={{ margin: 0 }}>
-                    Tailor-made designs for iOS and Android, optimized for platform guidelines and smooth user experience.
+                    Custom logos designed to represent your brand’s values, mission, and personality simple, bold, and timeless.
                   </p>
                 </div>
               </div>
@@ -202,7 +202,7 @@ const AppDesignServices = () => {
                     boxSizing: "border-box",
                   }}
                 >
-                  UI/UX Wireframing
+                  Visiting Card Design
                 </div>
                 <div
                   style={{
@@ -217,9 +217,9 @@ const AppDesignServices = () => {
                     gap: 15,
                   }}
                 >
-                  <FaCodeBranch color="#5454a6" size={40} />
+                  <FaAddressCard color="#5454a6" size={40} />
                   <p style={{ margin: 0 }}>
-                    Research-driven layouts and wireframes to ensure intuitive user journeys before visual design begins.
+                    Elegant and professional visiting card layouts that help you make a strong first impression with every exchange.
                   </p>
                 </div>
               </div>
@@ -250,7 +250,7 @@ const AppDesignServices = () => {
                     boxSizing: "border-box",
                   }}
                 >
-                  Prototyping & Testing
+                  Creative Illustrations
                 </div>
                 <div
                   style={{
@@ -265,104 +265,9 @@ const AppDesignServices = () => {
                     gap: 15,
                   }}
                 >
-                  <FaUserFriends color="#5454a6" size={40} />
+                  <FaFeatherAlt color="#5454a6" size={40} />
                   <p style={{ margin: 0 }}>
-                    Interactive prototypes to test app flows, gather feedback, and refine before launch.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Cost-Effective Solutions */}
-            <div className="col-lg-4 col-md-6">
-              <div
-                style={{
-                  borderRadius: 8,
-                  boxShadow: "0 3px 6px rgba(0,0,0,0.12)",
-                  backgroundColor: "#fff",
-                  overflow: "hidden",
-                  minHeight: 280,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    padding: "30px 50px",
-                    background: "linear-gradient(90deg, #7478e0 0%, #fc80bb 100%)",
-                    color: "#fff",
-                    fontWeight: 600,
-                    fontSize: "1.15rem",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  Custom App Branding
-                </div>
-                <div
-                  style={{
-                    padding: "28px 24px",
-                    color: "#333",
-                    fontSize: "1rem",
-                    fontWeight: 400,
-                    flexGrow: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    gap: 15,
-                  }}
-                >
-                  <FaDollarSign color="#5454a6" size={40} />
-                  <p style={{ margin: 0 }}>
-                    Unique themes, icons, and style guides aligned with your brand identity.
-                  </p>
-                </div>
-              </div>
-            </div>
-                        {/* Cost-Effective Solutions */}
-            <div className="col-lg-4 col-md-6">
-              <div
-                style={{
-                  borderRadius: 8,
-                  boxShadow: "0 3px 6px rgba(0,0,0,0.12)",
-                  backgroundColor: "#fff",
-                  overflow: "hidden",
-                  minHeight: 280,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    padding: "30px 50px",
-                    background: "linear-gradient(90deg, #7478e0 0%, #fc80bb 100%)",
-                    color: "#fff",
-                    fontWeight: 600,
-                    fontSize: "1.15rem",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  Design Systems
-                </div>
-                <div
-                  style={{
-                    padding: "28px 24px",
-                    color: "#333",
-                    fontSize: "1rem",
-                    fontWeight: 400,
-                    flexGrow: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    gap: 15,
-                  }}
-                >
-                  <FaDollarSign color="#5454a6" size={40} />
-                  <p style={{ margin: 0 }}>
-                    Comprehensive design systems that ensure consistency across your digital products.
+                    Eye-catching illustrations and icons that add personality and uniqueness to your brand assets..
                   </p>
                 </div>
               </div>
@@ -373,7 +278,7 @@ const AppDesignServices = () => {
       <section className="py-5" style={{ backgroundColor: "#fff" }}>
   <div className="container">
     <h2 className="fw-bold mb-5 text-center" style={{ color: "#121212", fontSize: "2.5rem", fontWeight: 700 }}>
-      Industries We Serve
+      Who We Design For
     </h2>
     <div className="row g-4 justify-content-start">
       {/* Finance Apps */}
@@ -491,4 +396,4 @@ const AppDesignServices = () => {
   );
 };
 
-export default AppDesignServices;
+export default LogoAndVisitingService;
