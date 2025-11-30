@@ -1,13 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaPalette, FaTabletAlt, FaShieldAlt, FaCheck  } from "react-icons/fa";
 import WebDesignImage from "../../assets/webdesign-image1.png"; // Replace with actual image path
 
 const WebDesign = () => {
-    const planCards = [
+    const [isYearly, setIsYearly] = useState(false);
+
+const monthlyPlans = [
     {
       title: "Basic Plan",
       price: "$29/per month",
-      features: ["50+ social media image templates", "10+ caption ideas", "Basic support"],
+      features: [
+        "50+ social media image templates",
+        "10+ caption ideas",
+        "Basic support",
+      ],
       background: "#5C28A8",
     },
     {
@@ -33,6 +39,43 @@ const WebDesign = () => {
       background: "#5C28A8",
     },
   ];
+
+  const yearlyPlans = [
+    {
+      title: "Basic Plan",
+      price: "$290/year",
+      features: [
+        "50+ social media image templates",
+        "10+ caption ideas",
+        "1 Months Free",
+      ],
+      background: "#5C28A8",
+    },
+    {
+      title: "Standard",
+      price: "$350/year",
+      features: [
+        "50+ social media image templates",
+        "10+ caption ideas",
+        "5 cover headers",
+        "2 Months Free",
+      ],
+      background: "#892364CC",
+    },
+    {
+      title: "Premium",
+      price: "$500/year",
+      features: [
+        "50+ social media image templates",
+        "10+ caption ideas",
+        "Editable source files (PSD / AI)",
+        "3 Months Free",
+      ],
+      background: "#5C28A8",
+    },
+  ];
+
+  const planCards = isYearly ? yearlyPlans : monthlyPlans;
   return (
     <>
       {/* 1. Transform Your Digital Presence Section */}
@@ -119,29 +162,45 @@ const WebDesign = () => {
         </div>
       </section>
        {/* ========== Plans Section ========== */}
-      <section className="py-5 mb-4" style={{ backgroundColor: "#fff" }}>
+<section className="py-5 mb-4" style={{ backgroundColor: "#fff" }}>
         <div className="container">
-          <h2
-            className="display-6 fw-semibold text-center mb-4"
-            style={{ color: "#000" }}
-          >
-            Choose Your Plan
-          </h2>
-      
-          <p
-            className="text-center mb-5"
-            style={{ fontSize: "1.5rem" }}
-          >
-            Choose a plan tailored to your campaign goals from social posts to full branding kits.
+          {/* Heading */}
+          <div className="d-flex align-items-center mb-3 position-relative">
+            <h2
+              className="display-6 fw-semibold text-center flex-grow-1"
+              style={{ color: "#000", margin: 0 }}
+            >
+              Choose Your Plan
+            </h2>
+
+            {/* Toggle Switch */}
+            <div className="position-absolute end-0 d-flex align-items-center">
+              <span className="me-2 fw-semibold" style={{ color: "#000" }}>
+                Monthly
+              </span>
+
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={isYearly}
+                  onChange={() => setIsYearly(!isYearly)}
+                />
+                <span className="slider"></span>
+              </label>
+
+              <span className="ms-2 fw-semibold" style={{ color: "#000" }}>
+                Yearly
+              </span>
+            </div>
+          </div>
+
+          <p className="text-center mb-5" style={{ fontSize: "1.5rem" }}>
+            Choose a plan tailored to your campaign goals from social posts to
+            full branding kits.
           </p>
-      
-          <div
-            className="row justify-content-center align-items-end g-0"
-            style={{
-              margin: "0 auto",
-              gap: "0", // extra spacing between columns
-            }}
-          >
+
+          {/* Cards */}
+          <div className="row justify-content-center align-items-end g-0">
             {planCards.map((card, index) => (
               <div
                 key={index}
@@ -157,10 +216,10 @@ const WebDesign = () => {
                   style={{
                     borderRadius: "5px",
                     width: "100%",
-                    maxWidth: "340px", 
+                    maxWidth: "340px",
                     height: index === 1 ? "430px" : "400px",
                     border: `1px solid ${card.background}`,
-                    marginRight: index !== 2 ? "-1px" : "0", 
+                    marginRight: index !== 2 ? "-1px" : "0",
                   }}
                 >
                   {/* Upper white section */}
@@ -172,10 +231,7 @@ const WebDesign = () => {
                       border: `2px solid ${card.background}`,
                     }}
                   >
-                    <h4
-                      className="fw-semibold mb-3"
-                      style={{ color: "#000" }}
-                    >
+                    <h4 className="fw-semibold mb-3" style={{ color: "#000" }}>
                       {card.title}
                     </h4>
                     <h2
@@ -185,8 +241,8 @@ const WebDesign = () => {
                       {card.price}
                     </h2>
                   </div>
-      
-                  {/* Colored bottom section */}
+
+                  {/* Bottom colored section */}
                   <div
                     style={{
                       backgroundColor: card.background,
@@ -195,10 +251,7 @@ const WebDesign = () => {
                       height: "100%",
                     }}
                   >
-                    <ul
-                      className="list-unstyled text-start mb-4"
-                      style={{ paddingLeft: "10px" }}
-                    >
+                    <ul className="list-unstyled text-start mb-4">
                       {card.features.map((feature, i) => (
                         <li
                           key={i}
@@ -228,6 +281,7 @@ const WebDesign = () => {
                         </li>
                       ))}
                     </ul>
+
                     <button
                       className="btn fw-bold px-4 py-2 rounded-2"
                       style={{
@@ -244,6 +298,49 @@ const WebDesign = () => {
             ))}
           </div>
         </div>
+
+        {/* Toggle Switch CSS */}
+        <style>{`
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 55px;
+          height: 28px;
+        }
+
+        .switch input {
+          display: none;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          inset: 0;
+          background: #ccc;
+          border-radius: 34px;
+          transition: 0.4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 22px;
+          width: 22px;
+          left: 3px;
+          bottom: 3px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+
+        input:checked + .slider {
+          background-color: #5C28A8;
+        }
+
+        input:checked + .slider:before {
+          transform: translateX(26px);
+        }
+      `}</style>
       </section>
     </>
   );
