@@ -19,6 +19,7 @@ import ContactPage from "./pages/ContactPage";
 import TermsOfService from "./pages/TermsofService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
+import AboutUsPage from "./pages/AboutUsPage";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/about-us" element={<AboutUsPage />} />
 
             {/* Add more routes for other services as needed */}
           </Routes>

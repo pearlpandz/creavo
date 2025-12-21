@@ -98,6 +98,9 @@ const TemplatesThatSpeak = () => (
             padding: "10px 28px",
             boxShadow: "0 1px 6px rgba(44,83,162,0.08)",
           }}
+                          onClick={() =>
+                  window.open("https://app.creavo.in/#/signup", "_blank")
+                }
         >
           Explore Templates
         </button>

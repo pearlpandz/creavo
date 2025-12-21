@@ -208,6 +208,9 @@ const GetDesignersPage = () => {
                   fontSize: "1.1rem",
                   boxShadow: "0 4px 15px rgba(164, 178, 255, 0.3)",
                 }}
+                              onClick={() =>
+                window.open("https://app.creavo.in/#/signup", "_blank")
+              }
               >
                 Explore Now
               </button>

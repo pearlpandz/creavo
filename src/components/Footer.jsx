@@ -21,12 +21,12 @@ const Footer = () => {
             <h5 className="footer-heading mb-3">Quick Links</h5>
             <ul className="list-unstyled footer-links">
               <li className="mb-2">
-                <a
-                  href="#"
+                <Link
+                  to="/about-us"
                   className="text-white text-decoration-none footer-link"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
                 <a
