@@ -21,12 +21,18 @@ const Footer = () => {
             <h5 className="footer-heading mb-3">Quick Links</h5>
             <ul className="list-unstyled footer-links">
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none footer-link">
+                <a
+                  href="#"
+                  className="text-white text-decoration-none footer-link"
+                >
                   About Us
                 </a>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none footer-link">
+                <a
+                  href="#"
+                  className="text-white text-decoration-none footer-link"
+                >
                   Templates
                 </a>
               </li>
@@ -38,7 +44,7 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-             <li className="mb-2">
+              <li className="mb-2">
                 <Link
                   to="/contact-us"
                   className="text-white text-decoration-none footer-link"
@@ -54,17 +60,34 @@ const Footer = () => {
             <h5 className="footer-heading mb-3">Support</h5>
             <ul className="list-unstyled footer-links">
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none footer-link">
+                <Link
+                  to="/terms-of-service"
+                  className="text-white text-decoration-none footer-link"
+                >
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none footer-link">
+                <Link
+                  to="/privacy-policy"
+                  className="text-white text-decoration-none footer-link"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-white text-decoration-none footer-link">
+                <Link
+                  to="/refund-policy"
+                  className="text-white text-decoration-none footer-link"
+                >
+                  Refund Ploicy
+                </Link>
+              </li>
+              <li className="mb-2">
+                <a
+                  href="#"
+                  className="text-white text-decoration-none footer-link"
+                >
                   FAQ
                 </a>
               </li>

@@ -16,6 +16,9 @@ import GetDesignersPage from "./pages/GetDesignersPage";
 import Services from "./pages/services";
 import LogoAndVisitingService from "./pages/services/LogoAndVisitingService";
 import ContactPage from "./pages/ContactPage";
+import TermsOfService from "./pages/TermsofService";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RefundPolicy from "./pages/RefundPolicy";
 
 function App() {
   return (
@@ -37,6 +40,10 @@ function App() {
             <Route path="/services/logo-&-visiting-service" element={<LogoAndVisitingService />} />
             <Route path="/get-designers" element={<GetDesignersPage />} />
             <Route path="/contact-us" element={<ContactPage />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+
             {/* Add more routes for other services as needed */}
           </Routes>
         </main>
