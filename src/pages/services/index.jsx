@@ -1,11 +1,9 @@
 import React from "react";
 import { FaArrowRight, FaPaintBrush  } from "react-icons/fa";
-import ShopBackgroundImage from "../../assets/shop-background-image.png"; // Replace with your actual background image
-import SocialMediaImage from "../../assets/shop-category-image1.png"; // Replace with actual template images
-import WebDesignImage from "../../assets/shop-category-image2.png";
-import AppDesignImage from "../../assets/shop-category-image3.png";
-import LogoDesignImage from "../../assets/shop-category-image4.png";
-import VisitingCardImage from "../../assets/shop-category-image5.png";
+import ShopBackgroundImage from "../../assets/services-background-image.png"; // Replace with your actual background image
+import WebDesignImage from "../../assets/services-category-image1.jpg"; // Replace with actual template images
+import AppDesignImage from "../../assets/services-category-image2.jpg";
+import LogoDesignImage from "../../assets/services-category-image3.jpg";
 import HowItWorksImage1 from "../../assets/howitworks-image1.jpg";
 import HowItWorksImage2 from "../../assets/howitworks-image2.jpg";
 import HowItWorksImage3 from "../../assets/howitworks-image3.png";
@@ -13,47 +11,35 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const Shop = () => {
+const Services = () => {
     const navigate = useNavigate();
     const handleViewPlans = (category) => {
   // Example: navigate to /shop/website-design, /shop/logo-design, etc.
   const formattedCategory = category.toLowerCase().replace(/\s+/g, "-");
-  navigate(`/shop/${formattedCategory}`);
+  navigate(`/services/${formattedCategory}`);
 };
 
 
   // Array for Browse by Category Cards
   const categoryCards = [
     {
-      image: SocialMediaImage,
-      title: "Social Media Marketing",
-      text: "Boost online presence with ready-to-use social media templates.",
-      category: "Social Media Marketing",
-    },
-    {
       image: WebDesignImage,
-      title: "Website Design",
-      text: "Professional, responsive website layouts tailored for your brand.",
-      category: "Website Design",
+      title: "Website Design Services",
+      text: "Create stunning, responsive websites that bring your brand to life online.",
+      category: "Website Design Service",
     },
     {
       image: AppDesignImage,
-      title: "App Design",
-      text: "Engaging UI/UX designs to make your app stand out.",
-      category: "App Design",
+      title: "App Design Service",
+      text: "Build powerful, user-friendly apps that keep your audience connected anytime, anywhere.",
+      category: "App Design Service",
     },
     {
       image: LogoDesignImage,
-      title: "Logo Design",
-      text: "Unique logos that define your brand identity.",
-      category: "Logo Design",
-    },
-    {
-      image: VisitingCardImage,
-      title: "Visiting Card Design",
-      text: "Modern and professional business card templates.",
-      category: "Visiting Card Design",
-    },
+      title: "Logo & Visiting Card Design",
+      text: "Design unique, memorable logos & Visiting card  that define your brand’s identity.",
+      category: "Logo & Visiting Service",
+    }
   ];
 
   const steps = [
@@ -111,10 +97,10 @@ const Shop = () => {
   ></div>
         <div className="container position-relative">
           <h1 className="display-5 fw-semibold mb-4" style={{ color: "#fff" }}>
-            Explore Creavo Templates
+           Complete Branding, Web & App Services
           </h1>
           <p className="lead mb-4" style={{ color: "#fff", fontSize: "1.3rem" }}>
-            Choose a category and find ready-to-use designs for your business.
+            Build your online identity with stunning websites, engaging mobile apps, unique logo designs, and professional visiting cards
           </p>
           <button
             className="btn px-5 py-3 rounded-2 fw-bold"
@@ -192,7 +178,7 @@ const Shop = () => {
   }}
   onClick={() => handleViewPlans(card.category)}
 >
-  View Plans <FaArrowRight size={12} className="ms-1" />
+  View <FaArrowRight size={12} className="ms-1" />
 </button>
             </div>
           </div>
@@ -319,4 +305,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Services;

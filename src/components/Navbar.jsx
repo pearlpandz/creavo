@@ -1,11 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom"; // Add this import at the top
+import { Link } from "react-router-dom";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  const hoverTimeout = useRef(null);
 
   const handleToggle = () => setMenuOpen((open) => !open);
+
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 992) {
+      clearTimeout(hoverTimeout.current);
+      setDropdownOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 992) {
+      // small delay to prevent flicker
+      hoverTimeout.current = setTimeout(() => setDropdownOpen(false), 200);
+    }
+  };
+
+  const handleDropdownClick = () => {
+    if (window.innerWidth < 992) setDropdownOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    return () => clearTimeout(hoverTimeout.current);
+  }, []);
 
   return (
     <nav
@@ -29,16 +55,8 @@ const Navbar = () => {
         }}
       >
         {/* Logo */}
-        <a
-          className="d-flex align-items-center"
-          href="#"
-          style={{ gap: 10 }}
-        >
-          <img
-            src={logo}
-            alt="Creavo"
-            style={{ height: 52, marginRight: 8 }}
-          />
+        <a className="d-flex align-items-center" href="#" style={{ gap: 10 }}>
+          <img src={logo} alt="Creavo" style={{ height: 52, marginRight: 8 }} />
         </a>
 
         {/* Mobile Toggle Button */}
@@ -65,7 +83,9 @@ const Navbar = () => {
               borderRadius: 2,
               marginBottom: 6,
               transition: "transform 0.3s ease, opacity 0.3s ease",
-              transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "rotate(0deg)",
+              transform: menuOpen
+                ? "rotate(45deg) translate(5px, 5px)"
+                : "rotate(0deg)",
             }}
           />
           <span
@@ -88,7 +108,9 @@ const Navbar = () => {
               background: "#312C9A",
               borderRadius: 2,
               transition: "transform 0.3s ease",
-              transform: menuOpen ? "rotate(-45deg) translate(7px, -7px)" : "rotate(0deg)",
+              transform: menuOpen
+                ? "rotate(-45deg) translate(7px, -7px)"
+                : "rotate(0deg)",
             }}
           />
         </button>
@@ -140,46 +162,89 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
-            <li className="dropdown" style={{ position: "relative" }}>
-              <a
-                href="#"
+
+            {/* Services Dropdown */}
+            <li
+              ref={dropdownRef}
+              className="dropdown"
+              style={{ position: "relative" }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+                onClick={handleDropdownClick}
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
                   fontSize: 16,
                   letterSpacing: 0.5,
                   padding: menuOpen ? "8px 0" : "0",
-                }}
-                className="dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                Services
-              </a>
-              <ul
-                className="dropdown-menu"
-                style={{
-                  fontSize: 20,
-                  minWidth: 260,
-                  minHeight:150
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
                 }}
               >
-                <li>
-                  <Link className="dropdown-item" to="/services/web-design-services">
-      Web Design Services
-    </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/services/app-design-services">
-      App Design Services
-    </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/logo-design">
-      Logo & Visiting Card Design
-    </Link>
-                </li>
-              </ul>
+                Services{" "}
+                {dropdownOpen ? (
+                  <FaChevronUp size={12} color="#312C9A" />
+                ) : (
+                  <FaChevronDown size={12} color="#312C9A" />
+                )}
+              </div>
+
+              {dropdownOpen && (
+                <ul
+                  className="dropdown-menu show"
+                  style={{
+                    position: window.innerWidth >= 992 ? "absolute" : "static",
+                    top: window.innerWidth >= 992 ? "100%" : "auto",
+                    left: 0,
+                    marginTop: 6,
+                    background: "#fff",
+                    borderRadius: 10,
+                    boxShadow:
+                      "0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05)",
+                    padding: "12px 0",
+                    minWidth: 240,
+                    zIndex: 100,
+                  }}
+                >
+                  {[
+                    {
+                      to: "/services/website-design-service",
+                      text: "Web Design Services",
+                    },
+                    {
+                      to: "/services/app-design-service",
+                      text: "App Design Services",
+                    },
+                    {
+                      to: "/services/logo-&-visiting-service",
+                      text: "Logo & Visiting Card Design",
+                    },
+                  ].map(({ to, text }) => (
+                    <li key={to}>
+                      <Link
+                        to={to}
+                        className="dropdown-item"
+                        style={{
+                          color: "#312C9A",
+                          textDecoration: "none",
+                          padding: "10px 18px",
+                          display: "block",
+                          transition: "0.3s",
+                        }}
+                        onClick={() => setDropdownOpen(false)}
+                      >
+                        {text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
+
             <li>
               <Link
                 to="/shop"
@@ -222,6 +287,20 @@ const Navbar = () => {
                 Get Designers
               </Link>
             </li>
+            <li>
+              <Link
+                to="/contact-us"
+                style={{
+                  color: "#312C9A",
+                  textDecoration: "none",
+                  fontSize: 16,
+                  letterSpacing: 0.5,
+                  padding: menuOpen ? "8px 0" : "0",
+                }}
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
 
           {/* Buttons */}
@@ -244,8 +323,11 @@ const Navbar = () => {
                 fontWeight: 500,
                 fontSize: 15,
                 width: menuOpen ? "100%" : "auto",
-                marginBottom: menuOpen ? 10 : 0,
+                cursor: "pointer",
               }}
+              onClick={() =>
+                window.open("https://app.creavo.in/#/signup", "_blank")
+              }
             >
               Sign Up
             </button>
@@ -260,26 +342,32 @@ const Navbar = () => {
                 fontSize: 15,
                 boxShadow: "0 1px 2px 0 #eee",
                 width: menuOpen ? "100%" : "auto",
+                cursor: "pointer",
               }}
+              onClick={() =>
+                window.open("https://app.creavo.in/#/signup", "_blank")
+              }
             >
               Get Started
             </button>
           </div>
         </div>
       </div>
-      {/* simple media queries */}
+
+      {/* CSS */}
       <style>{`
         @media (max-width: 992px) {
-          .container-fluid {
-            padding: 0 1rem !important;
-          }
-          .navbar-collapse {
-            display: none !important;
-          }
-          .navbar-collapse.open {
-            display: flex !important;
+          .container-fluid { padding: 0 1rem !important; }
+          .navbar-collapse { display: none !important; }
+          .navbar-collapse.open { display: flex !important; }
+          .dropdown-menu.show {
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            width: 100% !important;
+            padding-left: 1rem;
           }
         }
+
         @media (min-width: 992px) {
           .d-lg-none { display: none !important; }
           .navbar-collapse {
@@ -292,6 +380,10 @@ const Navbar = () => {
             background: transparent !important;
             width: auto !important;
             padding: 0 !important;
+          }
+          .dropdown-menu.show a:hover {
+            background: #f8f9ff;
+            color: #4F46E5;
           }
         }
       `}</style>

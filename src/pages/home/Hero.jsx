@@ -40,7 +40,9 @@ const Hero = () => (
               boxShadow: "0 2px 8px 0 rgba(0,0,0,0.04)",
               border: "none",
               marginBottom: "1rem",
+              cursor: "pointer", 
             }}
+            onClick={() => window.open("https://app.creavo.in/#/signup", "_blank")}
           >
             Start Creating - It's Free
           </button>
