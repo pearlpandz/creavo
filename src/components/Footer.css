@@ -1,15 +1,213 @@
 .footer {
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #aad5f9 0%, #f9ceef 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.footer h3, .footer h5 {
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%234c2978" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  pointer-events: none;
+}
+
+.footer .container-fluid {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  background: linear-gradient(135deg, #4c2978 0%, #2d336f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.footer-logo {
+  height: 58px;
   margin-bottom: 1rem;
 }
 
-.footer a:hover {
-  color: #fff !important;
+.footer-text {
+  color: #4c2978 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.2rem;
 }
 
-.footer-heading{
-    font-weight: bold;
+.footer-heading {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2d336f;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, #4c2978, #2d336f);
+  border-radius: 1px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  color: #4c2978 !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 550;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+.footer-link:hover {
+  color: #2d336f !important;
+  transform: translateX(5px);
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #4c2978, #2d336f);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+  width: 10px;
+}
+
+.footer-input-group {
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(76, 41, 120, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(76, 41, 120, 0.2);
+}
+
+.footer-input-group .form-control {
+  background: transparent !important;
+  border: none;
+  color: #4c2978;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-input-group .form-control::placeholder {
+  color: #4c2978;
+  opacity: 0.7;
+}
+
+.footer-input-group .form-control:focus {
+  box-shadow: none;
+  background: transparent !important;
+}
+
+.footer-input-group .btn {
+  background: linear-gradient(135deg, #4c2978 0%, #2d336f 100%);
+  border: none;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.footer-input-group .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(76, 41, 120, 0.4);
+}
+
+.footer-bottom {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(76, 41, 120, 0.2);
+  margin-top: 1.5rem;
+}
+
+.footer-bottom p {
+  color: #4c2978;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-company {
+  background: linear-gradient(135deg, #4c2978 0%, #2d336f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-logo {
+    height: 45px;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .footer-heading {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-link::before {
+    display: none;
+  }
+  
+  .footer-link:hover {
+    transform: none;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  
+  .footer-logo {
+    height: 40px;
+  }
+  
+  .footer-input-group {
+    margin-top: 1rem;
+  }
 }

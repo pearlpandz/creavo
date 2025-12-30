@@ -1,29 +1,30 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
+import logo from "../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-dark text-white">
+    <footer className="footer">
       <div className="container-fluid">
-        <div className="row gy-4 py-5">
+        <div className="row gy-3 py-3">
           {/* Brand Section */}
           <div className="col-md-3 col-12">
-            <h3 className="footer-heading">Creavo</h3>
-            <p className="text-white footer-text">
+            <img src={logo} alt="Creavo" className="footer-logo" />
+            <p className="footer-text">
               Create and Share Personalized Digital Cards in Seconds
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="col-md-3 col-6">
-            <h5 className="footer-heading mb-3">Quick Links</h5>
-            <ul className="list-unstyled footer-links">
+            <h5 className="footer-heading">Quick Links</h5>
+            <ul className="footer-links">
               <li className="mb-2">
                 <Link
                   to="/about-us"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   About Us
                 </Link>
@@ -31,7 +32,7 @@ const Footer = () => {
               <li className="mb-2">
                 <a
                   href="#"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Templates
                 </a>
@@ -39,7 +40,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/services"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Services
                 </Link>
@@ -47,7 +48,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/contact-us"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Contact
                 </Link>
@@ -57,12 +58,12 @@ const Footer = () => {
 
           {/* Support Section */}
           <div className="col-md-3 col-6">
-            <h5 className="footer-heading mb-3">Support</h5>
-            <ul className="list-unstyled footer-links">
+            <h5 className="footer-heading">Support</h5>
+            <ul className="footer-links">
               <li className="mb-2">
                 <Link
                   to="/terms-of-service"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Terms of Service
                 </Link>
@@ -70,7 +71,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/privacy-policy"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Privacy Policy
                 </Link>
@@ -78,15 +79,15 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/refund-policy"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
-                  Refund Ploicy
+                  Refund Policy
                 </Link>
               </li>
               <li className="mb-2">
                 <a
                   href="#"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   FAQ
                 </a>
@@ -96,27 +97,25 @@ const Footer = () => {
 
           {/* Mail Us Section */}
           <div className="col-md-3 col-12">
-            <h5 className="footer-heading mb-3">Mail Us</h5>
-            <div className="input-group footer-input-group">
+            <h5 className="footer-heading">Mail Us</h5>
+            <div className="footer-input-group input-group">
               <input
                 type="email"
-                className="form-control bg-secondary text-white border-0"
+                className="form-control"
                 placeholder="Enter your email"
               />
-              <a href="mailto:contact@creavo.com" className="btn btn-primary">
+              <a href="mailto:contact@creavo.com" className="btn">
                 <MdEmail size={22} />
               </a>
             </div>
           </div>
         </div>
 
-        <hr className="border-secondary my-4" />
-
-        <div className="d-flex flex-column flex-md-row justify-content-between text-white small footer-bottom">
-          <p className="mb-1">© 2025 Creavo. All rights reserved.</p>
-          <p className="mb-1">
+        <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between">
+          <p className="footer-company">© 2025 Creavo. All rights reserved.</p>
+          <p>
             Product from{" "}
-            <span className="text-white fw-semibold">
+            <span className="footer-company">
               Karthikeya Business Solutions Pvt Ltd
             </span>
           </p>

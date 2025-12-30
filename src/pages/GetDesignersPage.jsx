@@ -25,7 +25,7 @@ const GetDesignersPage = () => {
   const monthlyPlans = [
     {
       title: "Basic Plan",
-      price: "$29/per month",
+      price: "₹295/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -35,7 +35,7 @@ const GetDesignersPage = () => {
     },
     {
       title: "Standard",
-      price: "$35/per month",
+      price: "₹491/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -46,7 +46,7 @@ const GetDesignersPage = () => {
     },
     {
       title: "Premium",
-      price: "$50/per month",
+      price: "₹786/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -60,7 +60,7 @@ const GetDesignersPage = () => {
   const yearlyPlans = [
     {
       title: "Basic Plan",
-      price: "$290/year",
+      price: "₹2,999/year",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -70,7 +70,7 @@ const GetDesignersPage = () => {
     },
     {
       title: "Standard",
-      price: "$350/year",
+      price: "₹4,999/year",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -81,7 +81,7 @@ const GetDesignersPage = () => {
     },
     {
       title: "Premium",
-      price: "$500/year",
+      price: "₹7,999/year",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
