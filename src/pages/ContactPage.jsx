@@ -114,7 +114,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Corresponding Address */}
+          {/* Company Address */}
           <div
             className="d-flex align-items-start p-3 rounded-3 shadow-sm"
             style={{ backgroundColor: "#E8F0FE" }}
@@ -127,7 +127,7 @@ const ContactPage = () => {
             </div>
             <div>
               <h5 className="mb-1" style={{ color: "#23446F" }}>
-                Corresponding Address
+                Company Address
               </h5>
               <p className="mb-0" style={{ color: "#333" }}>
                 KBS PVT LTD, Manjeera Trinity Corporate, 1010, 10th floor, KPHB

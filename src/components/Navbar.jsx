@@ -259,7 +259,7 @@ const Navbar = () => {
                 Shop
               </Link>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="#"
                 style={{
@@ -272,7 +272,7 @@ const Navbar = () => {
               >
                 Projects
               </a>
-            </li>
+            </li> */}
             <li>
               <Link
                 to="/get-designers"

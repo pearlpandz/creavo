@@ -1,5 +1,6 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
+import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
@@ -13,8 +14,22 @@ const Footer = () => {
           <div className="col-md-3 col-12">
             <img src={logo} alt="Creavo" className="footer-logo" />
             <p className="footer-text">
-              Create and Share Personalized Digital Cards in Seconds
+              Transform ideas into stunning digital cards and designs that captivate and engage your audience effortlessly.
             </p>
+            <div className="social-icons">
+              <a href="#" className="social-icon">
+                <FaInstagram />
+              </a>
+              <a href="#" className="social-icon">
+                <FaTwitter />
+              </a>
+              <a href="#" className="social-icon">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="social-icon">
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -107,6 +122,11 @@ const Footer = () => {
               <a href="mailto:contact@creavo.com" className="btn">
                 <MdEmail size={22} />
               </a>
+            </div>
+            <div className="footer-address">
+              <p className="footer-address-text">
+                KBS PVT LTD, Manjeera Trinity Corporate, 1010, 10th floor, KPHB Phase 3, Kukatpally, Hyderabad, Telangana 500072
+              </p>
             </div>
           </div>
         </div>

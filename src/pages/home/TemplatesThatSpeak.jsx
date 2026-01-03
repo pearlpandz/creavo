@@ -55,7 +55,7 @@ const TemplatesThatSpeak = () => (
         <div
           style={{
             fontWeight: 700,
-            color: "#295187",
+            color: "#299187",
             fontSize: "1.42rem",
             marginBottom: 10,
             letterSpacing: "0.5px",

@@ -39,8 +39,8 @@ const SocialMediaMarketingPage = () => {
 
 const monthlyPlans = [
     {
-      title: "Basic Plan",
-      price: "₹295/per month",
+      title: "Basic",
+      price: "₹299/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -49,8 +49,8 @@ const monthlyPlans = [
       background: "#5C28A8",
     },
     {
-      title: "Standard",
-      price: "₹491/per month",
+      title: "Pro",
+      price: "₹499/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -60,8 +60,8 @@ const monthlyPlans = [
       background: "#892364CC",
     },
     {
-      title: "Premium",
-      price: "₹786/per month",
+      title: "Enterprise",
+      price: "₹799/per month",
       features: [
         "50+ social media image templates",
         "10+ caption ideas",
@@ -74,7 +74,7 @@ const monthlyPlans = [
 
   const yearlyPlans = [
     {
-      title: "Basic Plan",
+      title: "Basic",
       price: "₹2,999/year",
       features: [
         "50+ social media image templates",
@@ -84,7 +84,7 @@ const monthlyPlans = [
       background: "#5C28A8",
     },
     {
-      title: "Standard",
+      title: "Pro",
       price: "₹4,999/year",
       features: [
         "50+ social media image templates",
@@ -95,7 +95,7 @@ const monthlyPlans = [
       background: "#892364CC",
     },
     {
-      title: "Premium",
+      title: "Enterprise",
       price: "₹7,999/year",
       features: [
         "50+ social media image templates",
