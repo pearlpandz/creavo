@@ -124,9 +124,14 @@ const Footer = () => {
               </a>
             </div>
             <div className="footer-address">
-              <p className="footer-address-text">
-                KBS PVT LTD, Manjeera Trinity Corporate, 1010, 10th floor, KPHB Phase 3, Kukatpally, Hyderabad, Telangana 500072
-              </p>
+              <div className="footer-contact-info">
+                <div className="footer-company-name">KBS PVT LTD</div>
+                <div className="footer-address-line">Manjeera Trinity Corporate</div>
+                <div className="footer-address-line">1010, 10th Floor, KPHB Phase 3</div>
+                <div className="footer-address-line">Kukatpally, Hyderabad</div>
+                <div className="footer-address-line">Telangana 500072</div>
+                <div className="footer-phone">📞 +91 8750749299</div>
+              </div>
             </div>
           </div>
         </div>

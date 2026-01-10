@@ -26,6 +26,7 @@ const AppDesign = () => {
         "Priority support",
       ],
       background: "#892364CC",
+      isPopular: true,
     },
     {
       title: "Enterprise",
@@ -37,6 +38,21 @@ const AppDesign = () => {
         "24/7 premium support",
       ],
       background: "#5C28A8",
+    },
+    {
+      title: "Premium",
+      price: "Contact Us",
+      features: [
+        "Custom design solutions",
+        "Personalized templates",
+        "Dedicated account manager",
+        "Unlimited revisions",
+      ],
+      background: "linear-gradient(90deg, #4a90e2 0%, #d946ef 50%)",
+      borderColor: "#4a90e2",
+      textColor: "#4a90e2",
+      isCustom: true,
+      isFullWidth: true,
     },
   ];
 
@@ -61,6 +77,7 @@ const AppDesign = () => {
         "2 Months Free",
       ],
       background: "#892364CC",
+      isPopular: true,
     },
     {
       title: "Enterprise",
@@ -72,6 +89,21 @@ const AppDesign = () => {
         "3 Months Free",
       ],
       background: "#5C28A8",
+    },
+    {
+      title: "Premium",
+      price: "Contact Us",
+      features: [
+        "Custom design solutions",
+        "Personalized templates",
+        "Dedicated account manager",
+        "Unlimited revisions",
+      ],
+      background: "linear-gradient(90deg, #4a90e2 0%, #d946ef 50%)",
+      borderColor: "#4a90e2",
+      textColor: "#4a90e2",
+      isCustom: true,
+      isFullWidth: true,
     },
   ];
 
@@ -197,103 +229,206 @@ const AppDesign = () => {
           </p>
 
           {/* Cards */}
-          <div className="row justify-content-center align-items-end g-0">
-            {planCards.map((card, index) => (
-              <div
-                key={index}
-                className="col-lg-3 col-md-4 col-sm-8 col-10 text-center p-0"
-                style={{
-                  transform: index === 1 ? "scale(1.1)" : "scale(0.95)",
-                  zIndex: index === 1 ? 2 : 1,
-                  transition: "transform 0.3s ease",
-                }}
-              >
-                <div
-                  className="card border-0 overflow-hidden shadow-sm mx-auto"
-                  style={{
-                    borderRadius: "5px",
-                    width: "100%",
-                    maxWidth: "340px",
-                    height: index === 1 ? "430px" : "400px",
-                    border: `1px solid ${card.background}`,
-                    marginRight: index !== 2 ? "-1px" : "0",
-                  }}
-                >
-                  {/* Upper white section */}
+          <div className="row justify-content-center g-4 mb-4">
+            <div className="col-12 d-flex justify-content-center">
+              <div className="d-flex align-items-end" style={{ gap: "0" }}>
+                {planCards.slice(0, 3).map((card, index) => (
                   <div
+                    key={index}
+                    className="text-center"
                     style={{
-                      backgroundColor: "#fff",
-                      padding: "40px 30px",
-                      borderBottom: `3px solid ${card.background}`,
-                      border: `2px solid ${card.background}`,
+                      marginRight: index !== 2 ? "-1px" : "0",
                     }}
                   >
-                    <h4 className="fw-semibold mb-3" style={{ color: "#000" }}>
-                      {card.title}
-                    </h4>
-                    <h2
-                      className="fw-bold"
-                      style={{ color: card.background, margin: 0 }}
-                    >
-                      {card.price}
-                    </h2>
-                  </div>
-
-                  {/* Bottom colored section */}
-                  <div
-                    style={{
-                      backgroundColor: card.background,
-                      color: "#fff",
-                      padding: "20px 25px",
-                      height: "100%",
-                    }}
-                  >
-                    <ul className="list-unstyled text-start mb-4">
-                      {card.features.map((feature, i) => (
-                        <li
-                          key={i}
-                          className="mb-3 d-flex align-items-center"
-                          style={{ fontSize: "0.95rem" }}
-                        >
-                          <span
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              width: "20px",
-                              height: "20px",
-                              borderRadius: "50%",
-                              backgroundColor: "#fff",
-                              marginRight: "8px",
-                            }}
-                          >
-                            <FaCheck
-                              style={{
-                                color: "#000",
-                                fontSize: "0.8rem",
-                              }}
-                            />
-                          </span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-
-                    <button
-                      className="btn fw-bold px-4 py-2 rounded-2"
+                    <div
+                      className="card border-0 overflow-hidden shadow-sm position-relative"
                       style={{
-                        backgroundColor: "#fff",
-                        color: card.background,
+                        borderRadius: "5px",
+                        width: "340px",
+                        height: card.isPopular ? "430px" : "400px",
                         border: `1px solid ${card.background}`,
+                        transform: card.isPopular ? "scale(1.05)" : "scale(1)",
+                        zIndex: card.isPopular ? 2 : 1,
                       }}
                     >
-                      Choose {card.title.split(" ")[0]}
-                    </button>
+                      {card.isPopular && (
+                        <div
+                          className="position-absolute top-0 start-50 translate-middle-x"
+                          style={{
+                            backgroundColor: "#ff6b35",
+                            color: "#fff",
+                            padding: "5px 20px",
+                            borderRadius: "0 0 10px 10px",
+                            fontSize: "0.8rem",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          MOST POPULAR
+                        </div>
+                      )}
+                      {/* Upper white section */}
+                      <div
+                        style={{
+                          backgroundColor: "#fff",
+                          padding: "40px 30px",
+                          borderBottom: `3px solid ${card.background}`,
+                          border: `2px solid ${card.background}`,
+                        }}
+                      >
+                        <h4 className="fw-semibold mb-3" style={{ color: "#000" }}>
+                          {card.title}
+                        </h4>
+                        <h2
+                          className="fw-bold"
+                          style={{ color: card.background, margin: 0 }}
+                        >
+                          {card.price}
+                        </h2>
+                      </div>
+
+                      {/* Bottom colored section */}
+                      <div
+                        style={{
+                          backgroundColor: card.background,
+                          color: "#fff",
+                          padding: "20px 25px",
+                          height: "100%",
+                        }}
+                      >
+                        <ul className="list-unstyled text-start mb-4">
+                          {card.features.map((feature, i) => (
+                            <li
+                              key={i}
+                              className="mb-3 d-flex align-items-center"
+                              style={{ fontSize: "0.95rem" }}
+                            >
+                              <span
+                                style={{
+                                  display: "inline-flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  width: "20px",
+                                  height: "20px",
+                                  borderRadius: "50%",
+                                  backgroundColor: "#fff",
+                                  marginRight: "8px",
+                                }}
+                              >
+                                <FaCheck
+                                  style={{
+                                    color: "#000",
+                                    fontSize: "0.8rem",
+                                  }}
+                                />
+                              </span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+
+                        <button
+                          className="btn fw-bold px-4 py-2 rounded-2"
+                          style={{
+                            backgroundColor: "#fff",
+                            color: card.background,
+                            border: `1px solid ${card.background}`,
+                          }}
+                          onClick={() => {
+                            if (card.isCustom) {
+                              window.open("mailto:support@creavo.in?subject=Custom Plan Inquiry", "_blank");
+                            } else {
+                              window.open("https://app.creavo.in/#/signup", "_blank");
+                            }
+                          }}
+                        >
+                          {card.isCustom ? "Contact Us" : `Choose ${card.title}`}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Premium Plan - Full Width */}
+          {planCards.find(card => card.isFullWidth) && (
+            <div className="row justify-content-center">
+              <div className="col-lg-8 col-md-10 col-12">
+                <div
+                  className="card border-0 overflow-hidden shadow-lg mx-auto"
+                  style={{
+                    borderRadius: "10px",
+                    border: `2px solid ${planCards.find(card => card.isFullWidth).borderColor || '#4a90e2'}`,
+                    background: `linear-gradient(135deg, #4a90e220, #4a90e210)`,
+                  }}
+                >
+                  <div className="row g-0 align-items-center">
+                    <div className="col-md-8">
+                      <div className="p-4">
+                        <div className="d-flex align-items-center mb-3">
+                          <h3 className="fw-bold mb-0 me-3" style={{ color: planCards.find(card => card.isFullWidth).textColor || '#4a90e2' }}>
+                            {planCards.find(card => card.isFullWidth).title}
+                          </h3>
+                          <span
+                            className="badge"
+                            style={{
+                              backgroundColor: planCards.find(card => card.isFullWidth).textColor || '#4a90e2',
+                              color: "#fff",
+                              fontSize: "0.7rem",
+                            }}
+                          >
+                            CUSTOM SOLUTION
+                          </span>
+                        </div>
+                        <h4 className="fw-bold mb-3" style={{ color: planCards.find(card => card.isFullWidth).textColor || '#4a90e2' }}>
+                          {planCards.find(card => card.isFullWidth).price}
+                        </h4>
+                        <div className="row">
+                          {planCards.find(card => card.isFullWidth).features.map((feature, i) => (
+                            <div key={i} className="col-md-6 mb-2">
+                              <div className="d-flex align-items-center">
+                                <FaCheck
+                                  style={{
+                                    color: planCards.find(card => card.isFullWidth).textColor || '#4a90e2',
+                                    marginRight: "8px",
+                                    fontSize: "0.9rem",
+                                  }}
+                                />
+                                <span style={{ color: "#333", fontSize: "0.95rem" }}>
+                                  {feature}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-4">
+                      <div className="p-4 text-center">
+                        <button
+                          className="btn fw-bold px-4 py-2 rounded-3"
+                          style={{
+                            background: planCards.find(card => card.isFullWidth).background,
+                            color: "#fff",
+                            border: "none",
+                            fontSize: "1rem",
+                            boxShadow: "0 4px 15px rgba(217, 70, 239, 0.3)",
+                          }}
+                          onClick={() => window.open("mailto:support@creavo.in?subject=Premium Plan Inquiry", "_blank")}
+                        >
+                          Choose Premium
+                        </button>
+                        <p className="small text-muted mt-2 mb-0">
+                          Tailored to your specific needs
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Toggle Switch CSS */}

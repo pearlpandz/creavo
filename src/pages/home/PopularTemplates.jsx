@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 // 🖼️ Import all template images
-import PopularTemplatesImage1 from "../../assets/popular-templates-image1.png";
-import PopularTemplatesImage2 from "../../assets/popular-templates-image2.jpg";
-import PopularTemplatesImage3 from "../../assets/popular-templates-image3.jpg";
-import PopularTemplatesImage4 from "../../assets/popular-templates-image4.jpg";
-import PopularTemplatesImage5 from "../../assets/popular-templates-image5.png";
-import PopularTemplatesImage6 from "../../assets/popular-templates-image6.jpg";
-import PopularTemplatesImage7 from "../../assets/popular-templates-image7.jpg";
-import PopularTemplatesImage8 from "../../assets/popular-templates-image8.jpg";
+import PopularTemplatesImage1 from "../../assets/additional-image1.png";
+import PopularTemplatesImage2 from "../../assets/additional-image2.png";
+import PopularTemplatesImage3 from "../../assets/additional-image3.png";
+import PopularTemplatesImage4 from "../../assets/additional-image4.png";
+import PopularTemplatesImage5 from "../../assets/additional-image5.png";
+import PopularTemplatesImage6 from "../../assets/additional-image6.png";
+import PopularTemplatesImage7 from "../../assets/additional-image7.png";
+import PopularTemplatesImage8 from "../../assets/additional-image8.png";
 
 import GreetingsTemplateImage1 from "../../assets/greetings-template1.png";
 import GreetingsTemplateImage2 from "../../assets/greetings-template2.jpg";

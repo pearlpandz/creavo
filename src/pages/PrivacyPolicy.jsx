@@ -13,6 +13,11 @@ const styles = {
     fontSize: "2.2rem",
     marginBottom: "8px",
     fontWeight:700,
+    textAlign: "center",
+    background: "linear-gradient(135deg, #4a90e2 0%, #d946ef 100%)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    backgroundClip: "text",
   },
   updated: {
     color: "#777",

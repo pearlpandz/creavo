@@ -35,7 +35,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4a90e2 0%, #d946ef 100%);
   color: white;
   border-radius: 50%;
   text-decoration: none;
@@ -58,7 +58,7 @@
 
 .social-icon:hover {
   transform: translateY(-3px) scale(1.1);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
   color: white;
 }
 
@@ -82,7 +82,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #4a90e2, #d946ef);
   border-radius: 1px;
 }
 
@@ -111,7 +111,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
+  background: linear-gradient(90deg, #4a90e2, #d946ef);
   transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -122,14 +122,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.15), transparent);
   transition: left 0.6s ease;
 }
 
 .footer-link:hover {
-  color: #667eea !important;
+  color: #4a90e2 !important;
   transform: translateY(-2px);
-  text-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+  text-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
 }
 
 .footer-link:hover::before {
@@ -143,9 +143,9 @@
 .footer-input-group {
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
-  background: #f8f9ff;
-  border: 1px solid #e0e6ff;
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.15);
+  background: linear-gradient(135deg, #e6f3ff 0%, #faf0ff 100%);
+  border: 1px solid #4a90e2;
 }
 
 .footer-input-group .form-control {
@@ -167,33 +167,58 @@
 }
 
 .footer-input-group .btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4a90e2 0%, #d946ef 100%);
   border: none;
   padding: 0.75rem 1rem;
   transition: all 0.3s ease;
   color: white;
+  font-weight: 600;
 }
 
 .footer-input-group .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
 }
 
 .footer-address {
   margin-top: 1rem;
 }
 
-.footer-address-text {
+.footer-contact-info {
+  background: #f8f9ff;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #4a90e2;
+}
+
+.footer-company-name {
+  color: #4c2978;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.footer-address-line {
   color: #4c2978;
   font-size: 0.85rem;
   line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.footer-phone {
+  color: #4a90e2;
+  font-size: 0.85rem;
   font-weight: 600;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .footer-bottom {
   padding-top: 1rem;
-  border-top: 1px solid #e0e6ff;
+  border-top: 1px solid #4a90e2;
   margin-top: 1.5rem;
 }
 
@@ -204,7 +229,7 @@
 }
 
 .footer-company {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4a90e2 0%, #d946ef 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
