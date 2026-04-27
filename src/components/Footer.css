@@ -184,36 +184,24 @@
   margin-top: 1rem;
 }
 
-.footer-contact-info {
-  background: #f8f9ff;
-  padding: 1rem;
-  border-radius: 8px;
-  border-left: 3px solid #4a90e2;
-}
-
 .footer-company-name {
   color: #4c2978;
   font-size: 0.9rem;
   font-weight: 700;
-  margin-bottom: 0.3rem;
 }
 
-.footer-address-line {
-  color: #4c2978;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  margin-bottom: 0.2rem;
-  font-weight: 500;
+.footer-address-text {
+  color: #555;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .footer-phone {
   color: #4a90e2;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
 }
 
 .footer-bottom {

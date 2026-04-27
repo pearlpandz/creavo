@@ -80,7 +80,7 @@ const TemplatesThatSpeak = () => (
             boxShadow: "0 1px 6px rgba(44,83,162,0.08)",
           }}
                           onClick={() =>
-                  window.open("https://app.creavo.in/#/signup", "_blank")
+                  window.open("https://app.creavo.in/#/login", "_blank")
                 }
         >
           Explore Templates

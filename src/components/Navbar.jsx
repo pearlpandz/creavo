@@ -151,6 +151,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
+                className="nav-link-item"
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
@@ -173,6 +174,7 @@ const Navbar = () => {
             >
               <div
                 onClick={handleDropdownClick}
+                className="nav-link-item"
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
@@ -248,6 +250,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/shop"
+                className="nav-link-item"
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
@@ -276,6 +279,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/get-designers"
+                className="nav-link-item"
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
@@ -290,6 +294,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact-us"
+                className="nav-link-item"
                 style={{
                   color: "#312C9A",
                   textDecoration: "none",
@@ -314,39 +319,42 @@ const Navbar = () => {
             }}
           >
             <button
+              className="navbar-btn-outline"
               style={{
-                border: "1.5px solid #312C9A",
+                border: "1.5px solid #4a90e2",
                 background: "#fff",
-                color: "#312C9A",
+                color: "#4a90e2",
                 borderRadius: 8,
-                padding: "6px 16px",
-                fontWeight: 500,
+                padding: "7px 18px",
+                fontWeight: 600,
                 fontSize: 15,
                 width: menuOpen ? "100%" : "auto",
                 cursor: "pointer",
+                transition: "all 0.25s",
               }}
-              onClick={() =>
-                window.open("https://app.creavo.in/#/signup", "_blank")
-              }
+              onMouseEnter={e => { e.currentTarget.style.background = "linear-gradient(90deg,#4a90e2,#d946ef)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.border = "1.5px solid transparent"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#4a90e2"; e.currentTarget.style.border = "1.5px solid #4a90e2"; }}
+              onClick={() => window.open("https://app.creavo.in/#/signup", "_blank")}
             >
               Sign Up
             </button>
             <button
               style={{
-                background: "#4F46E5",
+                background: "linear-gradient(90deg,#4a90e2,#d946ef)",
                 color: "#fff",
                 border: "none",
                 borderRadius: 8,
-                padding: "6px 18px",
-                fontWeight: 500,
+                padding: "7px 18px",
+                fontWeight: 600,
                 fontSize: 15,
-                boxShadow: "0 1px 2px 0 #eee",
+                boxShadow: "0 4px 14px rgba(74,144,226,0.3)",
                 width: menuOpen ? "100%" : "auto",
                 cursor: "pointer",
+                transition: "all 0.25s",
               }}
-              onClick={() =>
-                window.open("https://app.creavo.in/#/signup", "_blank")
-              }
+              onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 6px 20px rgba(74,144,226,0.5)"; e.currentTarget.style.transform = "translateY(-1px)"; }}
+              onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 4px 14px rgba(74,144,226,0.3)"; e.currentTarget.style.transform = "translateY(0)"; }}
+              onClick={() => window.open("https://app.creavo.in/#/login", "_blank")}
             >
               Get Started
             </button>
@@ -382,9 +390,30 @@ const Navbar = () => {
             padding: 0 !important;
           }
           .dropdown-menu.show a:hover {
-            background: #f8f9ff;
-            color: #4F46E5;
+            background: #f0f6ff;
+            color: #4a90e2;
           }
+        }
+        .nav-link-item {
+          position: relative;
+          padding-bottom: 2px;
+        }
+        .nav-link-item::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(90deg, #4a90e2, #d946ef);
+          border-radius: 1px;
+          transition: width 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+        .nav-link-item:hover {
+          color: #4a90e2 !important;
+        }
+        .nav-link-item:hover::after {
+          width: 100%;
         }
       `}</style>
     </nav>

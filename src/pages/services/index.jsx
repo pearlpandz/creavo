@@ -112,7 +112,7 @@ const Services = () => {
               boxShadow: "0 4px 15px rgba(164, 178, 255, 0.3)",
             }}
                           onClick={() =>
-                window.open("https://app.creavo.in/#/signup", "_blank")
+                window.open("https://app.creavo.in/#/login", "_blank")
               }
           >
             Explore Now

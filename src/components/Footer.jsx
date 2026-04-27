@@ -1,6 +1,6 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
-import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import logo from "../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container-fluid">
-        <div className="row gy-3 py-3">
+        <div className="row gy-3 py-3 gx-4">
           {/* Brand Section */}
-          <div className="col-md-3 col-12">
+          <div className="col-md-4 col-12">
             <img src={logo} alt="Creavo" className="footer-logo" />
             <p className="footer-text">
               Transform ideas into stunning digital cards and designs that captivate and engage your audience effortlessly.
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="col-md-3 col-6">
+          <div className="col-md-2 col-6">
             <h5 className="footer-heading">Quick Links</h5>
             <ul className="footer-links">
               <li className="mb-2">
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
 
           {/* Support Section */}
-          <div className="col-md-3 col-6">
+          <div className="col-md-2 col-6">
             <h5 className="footer-heading">Support</h5>
             <ul className="footer-links">
               <li className="mb-2">
@@ -99,19 +99,19 @@ const Footer = () => {
                   Refund Policy
                 </Link>
               </li>
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <a
                   href="#"
                   className="footer-link"
                 >
                   FAQ
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Mail Us Section */}
-          <div className="col-md-3 col-12">
+          <div className="col-md-4 col-12">
             <h5 className="footer-heading">Mail Us</h5>
             <div className="footer-input-group input-group">
               <input
@@ -124,14 +124,17 @@ const Footer = () => {
               </a>
             </div>
             <div className="footer-address">
-              <div className="footer-contact-info">
-                <div className="footer-company-name">KBS PVT LTD</div>
-                <div className="footer-address-line">Manjeera Trinity Corporate</div>
-                <div className="footer-address-line">1010, 10th Floor, KPHB Phase 3</div>
-                <div className="footer-address-line">Kukatpally, Hyderabad</div>
-                <div className="footer-address-line">Telangana 500072</div>
-                <div className="footer-phone">📞 +91 8750749299</div>
-              </div>
+              <p className="footer-company-name mt-3 mb-1">KBS PVT LTD</p>
+              <p className="footer-address-text">
+                <FaMapMarkerAlt size={12} style={{ marginRight: 5, color: "#4a90e2", flexShrink: 0 }} />
+                Manjeera Trinity Corporate, 1010, 10th Floor,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;KPHB Phase 3, Kukatpally,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Hyderabad, Telangana 500072
+              </p>
+              <p className="footer-phone">
+                <FaPhoneAlt size={12} style={{ marginRight: 6 }} />
+                +91 8750749299
+              </p>
             </div>
           </div>
         </div>
