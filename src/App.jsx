@@ -20,11 +20,13 @@ import TermsOfService from "./pages/TermsofService";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import AboutUsPage from "./pages/AboutUsPage";
+import ScrollToTopButton, { ScrollToTopOnNav } from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTopOnNav />
         <Navbar />
         <main style={{ minHeight: "80vh" }}>
           <Routes>
@@ -50,6 +52,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );

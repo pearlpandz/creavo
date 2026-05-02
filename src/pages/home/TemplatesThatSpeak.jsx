@@ -1,58 +1,39 @@
 import React from "react";
-import TemplateImage1 from "../../assets/template-image1.png";
-import TemplateImage2 from "../../assets/template-image2.png";
-import TemplateImage3 from "../../assets/template-image3.png";
-import TemplateImage4 from "../../assets/template-image4.png";
-
-const templateImages = [
-  TemplateImage2, TemplateImage4, TemplateImage3, TemplateImage1,
-  TemplateImage2, TemplateImage4, TemplateImage3, TemplateImage1,
-];
+import creavovideo from "../../assets/creavo-video.mp4";
 
 const TemplatesThatSpeak = () => (
   <section style={{ background: "#fff", padding: "40px 0" }}>
     <div
       className="mx-auto position-relative"
       style={{
-        maxWidth: "1200px",
+        maxWidth: "1800px",
         width: "100%",
-        height: "900px",
-        display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gridTemplateRows: "repeat(2, 1fr)",
-        gap: 0,
+        height: "800px",
         borderRadius: "2px",
         overflow: "hidden",
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
       }}
     >
-      {templateImages.map((img, idx) => (
-        <div
-          key={idx}
-          style={{
-            width: "100%",
-            height: "100%",
-            // Mobile: full width, auto height
-            gridColumn: "auto",
-            gridRow: "auto",
-          }}
-          className="template-grid-item"
-        >
-          <img
-            src={img}
-            alt={`template card ${idx + 1}`}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
-          />
-        </div>
-      ))}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          zIndex: 1,
+        }}
+      >
+        <source src={creavovideo} type="video/mp4" />
+      </video>
 
       {/* Overlay card */}
-      <div
+      {/* <div
         className="shadow px-4 py-4 overlay-card"
         style={{
           position: "absolute",
@@ -74,7 +55,7 @@ const TemplatesThatSpeak = () => (
         <div
           style={{
             fontWeight: 700,
-            color: "#295187",
+            color: "#299187",
             fontSize: "1.42rem",
             marginBottom: 10,
             letterSpacing: "0.5px",
@@ -99,12 +80,12 @@ const TemplatesThatSpeak = () => (
             boxShadow: "0 1px 6px rgba(44,83,162,0.08)",
           }}
                           onClick={() =>
-                  window.open("https://app.creavo.in/#/signup", "_blank")
+                  window.open("https://app.creavo.in/#/login", "_blank")
                 }
         >
           Explore Templates
         </button>
-      </div>
+      </div> */}
     </div>
 
     {/* Responsive CSS for mobile */}
@@ -112,20 +93,15 @@ const TemplatesThatSpeak = () => (
       {`
         @media (max-width: 768px) {
           .mx-auto.position-relative {
-            display: flex !important;
-            flex-direction: column;
-            height: auto !important;
-          }
-          .template-grid-item {
-            width: 100% !important;
-            height: auto !important;
+            height: 600px !important;
           }
           .overlay-card {
-            position: relative !important;
+            position: absolute !important;
             left: 50% !important;
-            top: auto !important;
-            transform: translateX(-50%) !important;
-            margin-top: 20px;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            min-width: 300px !important;
+            max-width: 90% !important;
           }
         }
       `}

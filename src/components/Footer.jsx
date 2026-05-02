@@ -1,29 +1,45 @@
 import React from "react";
 import { MdEmail } from "react-icons/md";
+import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import logo from "../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="footer bg-dark text-white">
+    <footer className="footer">
       <div className="container-fluid">
-        <div className="row gy-4 py-5">
+        <div className="row gy-3 py-3 gx-4">
           {/* Brand Section */}
-          <div className="col-md-3 col-12">
-            <h3 className="footer-heading">Creavo</h3>
-            <p className="text-white footer-text">
-              Create and Share Personalized Digital Cards in Seconds
+          <div className="col-md-4 col-12">
+            <img src={logo} alt="Creavo" className="footer-logo" />
+            <p className="footer-text">
+              Transform ideas into stunning digital cards and designs that captivate and engage your audience effortlessly.
             </p>
+            <div className="social-icons">
+              <a href="#" className="social-icon">
+                <FaInstagram />
+              </a>
+              <a href="#" className="social-icon">
+                <FaTwitter />
+              </a>
+              <a href="#" className="social-icon">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="social-icon">
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
-          <div className="col-md-3 col-6">
-            <h5 className="footer-heading mb-3">Quick Links</h5>
-            <ul className="list-unstyled footer-links">
+          <div className="col-md-2 col-6">
+            <h5 className="footer-heading">Quick Links</h5>
+            <ul className="footer-links">
               <li className="mb-2">
                 <Link
                   to="/about-us"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   About Us
                 </Link>
@@ -31,7 +47,7 @@ const Footer = () => {
               <li className="mb-2">
                 <a
                   href="#"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Templates
                 </a>
@@ -39,7 +55,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/services"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Services
                 </Link>
@@ -47,7 +63,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/contact-us"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Contact
                 </Link>
@@ -56,13 +72,13 @@ const Footer = () => {
           </div>
 
           {/* Support Section */}
-          <div className="col-md-3 col-6">
-            <h5 className="footer-heading mb-3">Support</h5>
-            <ul className="list-unstyled footer-links">
+          <div className="col-md-2 col-6">
+            <h5 className="footer-heading">Support</h5>
+            <ul className="footer-links">
               <li className="mb-2">
                 <Link
                   to="/terms-of-service"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Terms of Service
                 </Link>
@@ -70,7 +86,7 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/privacy-policy"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   Privacy Policy
                 </Link>
@@ -78,45 +94,56 @@ const Footer = () => {
               <li className="mb-2">
                 <Link
                   to="/refund-policy"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
-                  Refund Ploicy
+                  Refund Policy
                 </Link>
               </li>
-              <li className="mb-2">
+              {/* <li className="mb-2">
                 <a
                   href="#"
-                  className="text-white text-decoration-none footer-link"
+                  className="footer-link"
                 >
                   FAQ
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Mail Us Section */}
-          <div className="col-md-3 col-12">
-            <h5 className="footer-heading mb-3">Mail Us</h5>
-            <div className="input-group footer-input-group">
+          <div className="col-md-4 col-12">
+            <h5 className="footer-heading">Mail Us</h5>
+            <div className="footer-input-group input-group">
               <input
                 type="email"
-                className="form-control bg-secondary text-white border-0"
+                className="form-control"
                 placeholder="Enter your email"
               />
-              <a href="mailto:contact@creavo.com" className="btn btn-primary">
+              <a href="mailto:contact@creavo.com" className="btn">
                 <MdEmail size={22} />
               </a>
+            </div>
+            <div className="footer-address">
+              <p className="footer-company-name mt-3 mb-1">KBS PVT LTD</p>
+              <p className="footer-address-text">
+                <FaMapMarkerAlt size={12} style={{ marginRight: 5, color: "#4a90e2", flexShrink: 0 }} />
+                Manjeera Trinity Corporate, 1010, 10th Floor,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;KPHB Phase 3, Kukatpally,<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Hyderabad, Telangana 500072
+              </p>
+              <p className="footer-phone">
+                <FaPhoneAlt size={12} style={{ marginRight: 6 }} />
+                +91 8750749299
+              </p>
             </div>
           </div>
         </div>
 
-        <hr className="border-secondary my-4" />
-
-        <div className="d-flex flex-column flex-md-row justify-content-between text-white small footer-bottom">
-          <p className="mb-1">© 2025 Creavo. All rights reserved.</p>
-          <p className="mb-1">
+        <div className="footer-bottom d-flex flex-column flex-md-row justify-content-between">
+          <p className="footer-company">© 2025 Creavo. All rights reserved.</p>
+          <p>
             Product from{" "}
-            <span className="text-white fw-semibold">
+            <span className="footer-company">
               Karthikeya Business Solutions Pvt Ltd
             </span>
           </p>

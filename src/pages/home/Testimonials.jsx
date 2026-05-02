@@ -1,281 +1,142 @@
 import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-import TestimonialImage1 from "../../assets/testimonial-image1.jpg"
-import TestimonialImage2 from "../../assets/testimonial-image2.jpg"
-
+import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft } from "react-icons/fa";
+import ArunKumar from "../../assets/arunkumar-landvest.jpeg";
+import Chaitanya from "../../assets/chaitanya-flybyte.jpeg";
+import Prakash from "../../assets/prakash-desisafai.jpeg";
+import Manohar from "../../assets/manohar-mdigimart.jpeg";
+import Hitesh from "../../assets/hitesh-desidukan.jpeg";
+import Shyam from "../../assets/Shyam-mdgpay.jpeg";
 
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Priya Mehta",
-    quote:
-      "Creavo transformed our online presence! The website design was not only visually stunning but also incredibly user-friendly. Our traffic and inquiries have doubled since launch.",
-    avatar:
-      TestimonialImage1,
+    name: "Arun Kumar",
+    role: "Founder & Managing Director, Landvest",
+    avatar: ArunKumar,
+    quote: "Creavo has transformed how Landvest markets properties online. Our daily listing posts, project launches, and festive greetings look premium and on-brand every time. Buyer inquiries through social media have gone up noticeably since we started using it.",
   },
   {
     id: 2,
-    name: "Arjun Malhotra",
-    quote:
-      "Working with Creavo was a breeze. They understood our vision from day one and delivered a modern, responsive website that perfectly represents our brand.",
-    avatar:
-      TestimonialImage2,
+    name: "K. Krishna Chaitanya",
+    role: "Director, Flybyte",
+    avatar: Chaitanya,
+    quote: "As a tech company, we needed designs that looked sharp and modern. Creavo delivers exactly that — clean templates, easy customization, and consistent quality every single day. It's become an essential tool for our marketing team.",
   },
   {
     id: 3,
-    name: "Sneha Kapoor",
-    quote:
-      "Their design approach is fantastic — professional yet creative. We received great feedback from our clients about the new site look.",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+    name: "K. Satya Prakash",
+    role: "Director, Desi Safai",
+    avatar: Prakash,
+    quote: "Creavo made it incredibly easy for us to maintain a strong social media presence without hiring a full-time designer. The business-specific templates are spot on and the language options help us connect with our local audience.",
   },
   {
     id: 4,
-    name: "Rohit Sharma",
-    quote:
-      "Creavo’s attention to detail and post-launch support were outstanding. Definitely recommend them for any digital project!",
-    avatar:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop",
+    name: "Manohar",
+    role: "Director, Mdigimart",
+    avatar: Manohar,
+    quote: "We've tried many design tools but Creavo stands out for its simplicity and the sheer variety of templates. From festive greetings to promotional posts, everything is covered. Our clients love the quality of our social media content now.",
+  },
+  {
+    id: 5,
+    name: "R. Hitesh Nandan",
+    role: "Director, Desi Dukaan",
+    avatar: Hitesh,
+    quote: "Creavo is a game-changer for small businesses like ours. The daily poster feature keeps our brand visible every day without any extra effort. The templates are fresh, relevant, and perfectly suited for our audience.",
+  },
+  {
+    id: 6,
+    name: "Shyam",
+    role: "Director, Mdgpay",
+    avatar: Shyam,
+    quote: "In the fintech space, trust and professionalism are everything. Creavo helps us put out polished, credible content daily — from payment feature highlights to festive offers. It's made our brand look far more established on social media.",
   },
 ];
 
 const Testimonials = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [slides, setSlides] = useState([]);
-
-  // handle responsive grouping
-  const updateSlides = () => {
-    const isMobile = window.innerWidth < 768;
-    const groupSize = isMobile ? 1 : 2;
-    const grouped = [];
-    for (let i = 0; i < testimonials.length; i += groupSize) {
-      grouped.push(testimonials.slice(i, i + groupSize));
-    }
-    setSlides(grouped);
-    setCurrentSlide(0);
-  };
+  const [current, setCurrent] = useState(0);
+  const [groupSize, setGroupSize] = useState(2);
 
   useEffect(() => {
-    updateSlides();
-    window.addEventListener("resize", updateSlides);
-    return () => window.removeEventListener("resize", updateSlides);
+    const update = () => { setGroupSize(window.innerWidth < 768 ? 1 : 2); setCurrent(0); };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
-  const handlePrev = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
-  };
+  const slides = [];
+  for (let i = 0; i < testimonials.length; i += groupSize) slides.push(testimonials.slice(i, i + groupSize));
 
-  const handleNext = () => {
-    setCurrentSlide((prev) =>
-      prev === slides.length - 1 ? 0 : prev + 1
-    );
-  };
+  const prev = () => setCurrent(c => (c === 0 ? slides.length - 1 : c - 1));
+  const next = () => setCurrent(c => (c === slides.length - 1 ? 0 : c + 1));
+
+  const NavBtn = ({ onClick, children }) => (
+    <button onClick={onClick} style={{
+      width: 46, height: 46, borderRadius: "50%", border: "none", cursor: "pointer",
+      background: "linear-gradient(135deg, #4a90e2, #d946ef)",
+      color: "#fff", display: "flex", alignItems: "center", justifyContent: "center",
+      boxShadow: "0 4px 14px rgba(74,144,226,0.35)", transition: "transform 0.2s",
+    }}
+      onMouseEnter={e => e.currentTarget.style.transform = "scale(1.1)"}
+      onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+    >{children}</button>
+  );
 
   return (
-    <section
-      className="py-5"
-      style={{
-        background: "#fff",
-        marginBottom: "4rem", // extra space to prevent collision with footer
-      }}
-    >
+    <section className="py-5" style={{ background: "linear-gradient(135deg, #f8faff 0%, #fdf4ff 100%)" }}>
       <div className="container">
-        {/* Section Title */}
-        <div className="row justify-content-center text-center mb-4">
-          <div className="col-lg-8">
-            <h3
-              className="fw-semibold mb-2"
-              style={{
-                color: "#16112e",
-                fontSize: "1.5rem",
-                letterSpacing: "0.5px",
-              }}
-            >
-              Testimonials
-            </h3>
-            <h3
-              className="fw-bold mb-4"
-              style={{
-                color: "#16112e",
-                fontSize: "2.5rem",
-                letterSpacing: "0.5px",
-              }}
-            >
-              Our Success Stories
-            </h3>
-          </div>
+        <div className="text-center mb-5">
+          <span className="d-inline-block px-3 py-1 rounded-pill mb-3"
+            style={{ background: "linear-gradient(90deg,#e8f0ff,#fce8ff)", color: "#4c2978", fontSize: "0.85rem", fontWeight: 600 }}>
+            Testimonials
+          </span>
+          <h2 className="fw-bold mb-2" style={{ fontSize: "clamp(1.8rem,3.5vw,2.5rem)", color: "#16112e" }}>
+            Our{" "}
+            <span style={{ background: "linear-gradient(90deg,#4a90e2,#d946ef)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Success Stories
+            </span>
+          </h2>
+          <p className="text-muted" style={{ fontSize: "1.05rem" }}>What our customers say about us</p>
         </div>
 
         {slides.length > 0 && (
-          <div
-            className="position-relative"
-            style={{
-              maxWidth: 980,
-              margin: "0 auto",
-              padding: "0 20px",
-            }}
-          >
-            {/* Carousel Controls */}
-            <button
-              onClick={handlePrev}
-              className="position-absolute top-50 translate-middle-y d-none d-md-flex"
-              type="button"
-              style={{
-                left: "-44px",
-                zIndex: 2,
-                width: "58px",
-                height: "58px",
-                background: "#5b48e7",
-                border: "none",
-                borderRadius: "5px",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 2px 8px rgba(76,41,120,.08)",
-                cursor: "pointer",
-              }}
-            >
-              <FaChevronLeft size={22} color="#fff" />
-            </button>
-
-            <button
-              onClick={handleNext}
-              className="position-absolute top-50 translate-middle-y d-none d-md-flex"
-              type="button"
-              style={{
-                right: "-44px",
-                zIndex: 2,
-                width: "58px",
-                height: "58px",
-                background: "#5b48e7",
-                border: "none",
-                borderRadius: "5px",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 2px 8px rgba(76,41,120,.08)",
-                cursor: "pointer",
-              }}
-            >
-              <FaChevronRight size={22} color="#fff" />
-            </button>
-
-            {/* Mobile buttons below */}
-            <div
-              className="d-flex justify-content-center gap-4 mt-4 d-md-none"
-            >
-              <button
-                onClick={handlePrev}
-                style={{
-                  width: "46px",
-                  height: "46px",
-                  background: "#5b48e7",
-                  border: "none",
-                  borderRadius: "5px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 6px rgba(76,41,120,.15)",
-                  cursor: "pointer",
-                }}
-              >
-                <FaChevronLeft size={18} color="#fff" />
-              </button>
-              <button
-                onClick={handleNext}
-                style={{
-                  width: "46px",
-                  height: "46px",
-                  background: "#5b48e7",
-                  border: "none",
-                  borderRadius: "5px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 6px rgba(76,41,120,.15)",
-                  cursor: "pointer",
-                }}
-              >
-                <FaChevronRight size={18} color="#fff" />
-              </button>
-            </div>
-
-            {/* Testimonials Grid */}
-            <div className="row justify-content-center g-4 mt-3">
-              {slides[currentSlide].map((testimonial) => (
-                <div
-                  className="col-12 col-md-6"
-                  key={testimonial.id}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    className="bg-white rounded-4 shadow-sm h-100 p-4 d-flex flex-column align-items-center"
-                    style={{
-                      borderRadius: "1rem",
-                      border: "1.5px solid #f2f2f2",
-                      minHeight: 240,
-                      position: "relative",
-                      boxShadow: "0 1px 12px rgba(76,41,120,0.07)",
-                      paddingBottom: "70px",
-                      maxWidth: "420px",
-                      width: "100%",
-                    }}
-                  >
-                    <p
-                      className="mb-3"
-                      style={{
-                        color: "#3a3751",
-                        fontSize: "1.06rem",
-                        fontWeight: 400,
-                        textAlign: "center",
-                        lineHeight: "1.55",
-                        marginBottom: "1.8rem",
-                      }}
-                    >
-                      {testimonial.quote}
-                    </p>
-                    <div
-                      style={{
-                        fontWeight: "bold",
-                        color: "#191820",
-                        fontSize: "1.2rem",
-                        textAlign: "center",
-                        marginBottom: "0.7rem",
-                      }}
-                    >
-                      {testimonial.name}
+          <>
+            <div className="row g-4 justify-content-center mb-4">
+              {slides[current].map(t => (
+                <div className="col-12 col-md-6" key={t.id}>
+                  <div className="h-100 bg-white rounded-4 p-4" style={{ boxShadow: "0 4px 24px rgba(74,144,226,0.10)", border: "1px solid rgba(74,144,226,0.1)" }}>
+                    <div className="mb-3" style={{ color: "#4a90e2", opacity: 0.4 }}>
+                      <FaQuoteLeft size={28} />
                     </div>
-                    <div
-                      className="position-absolute start-50 translate-middle-x"
-                      style={{
-                        bottom: "-36px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <img
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        style={{
-                          width: "72px",
-                          height: "72px",
-                          objectFit: "cover",
-                          borderRadius: "100%",
-                          boxShadow: "0 2px 16px rgba(110,96,191,0.18)",
-                          border: "3px solid #fff",
-                        }}
-                      />
+                    <div className="d-flex gap-1 mb-3">
+                      {[...Array(5)].map((_, i) => <FaStar key={i} size={14} color="#f59e0b" />)}
+                    </div>
+                    <p className="mb-4" style={{ color: "#444", fontSize: "0.97rem", lineHeight: 1.7 }}>{t.quote}</p>
+                    <div className="d-flex align-items-center gap-3">
+                      <img src={t.avatar} alt={t.name} style={{ width: 52, height: 52, borderRadius: "50%", objectFit: "cover", objectPosition: "top", border: "2px solid #e8f0ff" }} />
+                      <div>
+                        <div className="fw-bold" style={{ color: "#16112e", fontSize: "0.97rem" }}>{t.name}</div>
+                        <div style={{ color: "#888", fontSize: "0.83rem" }}>{t.role}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+
+            <div className="d-flex justify-content-center align-items-center gap-3">
+              <NavBtn onClick={prev}><FaChevronLeft size={16} /></NavBtn>
+              <div className="d-flex gap-2">
+                {slides.map((_, i) => (
+                  <button key={i} onClick={() => setCurrent(i)} style={{
+                    width: i === current ? 24 : 8, height: 8, borderRadius: 4, border: "none", cursor: "pointer",
+                    background: i === current ? "linear-gradient(90deg,#4a90e2,#d946ef)" : "#ddd",
+                    transition: "all 0.3s",
+                  }} />
+                ))}
+              </div>
+              <NavBtn onClick={next}><FaChevronRight size={16} /></NavBtn>
+            </div>
+          </>
         )}
       </div>
     </section>
