@@ -1,0 +1,17 @@
+.navbar {
+  font-family: "Poppins", sans-serif;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #4b3cfb;
+  border-color: #4b3cfb;
+}
+
+.btn-primary:hover {
+  background-color: #3729d9;
+  border-color: #3729d9;
+}
